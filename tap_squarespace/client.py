@@ -1,0 +1,97 @@
+"""REST client handling, including squarespaceStream base class."""
+
+import requests
+from pathlib import Path
+from typing import Any, Dict, Optional, Union, List, Iterable
+from datetime import datetime,timezone
+from singer_sdk.helpers.jsonpath import extract_jsonpath
+from singer_sdk.streams import RESTStream
+from singer_sdk.authenticators import BearerTokenAuthenticator
+
+
+SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
+
+
+class squarespaceStream(RESTStream):
+    """squarespace stream class."""
+
+    # TODO: Set the API's base URL here:
+    url_base = "https://api.squarespace.com/1.0/commerce"
+
+    # OR use a dynamic url_base:
+    # @property
+    # def url_base(self) -> str:
+    #     """Return the API URL root, configurable via tap settings."""
+    #     return self.config["api_url"]
+
+    records_jsonpath = "$[*]"  # Or override `parse_response`.
+    next_page_token_jsonpath = "$.next_page"  # Or override `get_next_page_token`.
+
+    @property
+    def authenticator(self) -> BearerTokenAuthenticator:
+        """Return a new authenticator object."""
+        return BearerTokenAuthenticator.create_for_stream(
+            self,
+            token=self.config.get("api_key")
+        )
+
+    @property
+    def http_headers(self) -> dict:
+        """Return the http headers needed."""
+        headers = {}
+        if "user_agent" in self.config:
+            headers["User-Agent"] = self.config.get("user_agent")
+        # If not using an authenticator, you may also provide inline auth headers:
+        # headers["Private-Token"] = self.config.get("auth_token")
+        return headers
+
+    def get_next_page_token(
+        self, response: requests.Response, previous_token: Optional[Any]
+    ) -> Optional[Any]:
+        """Return a token for identifying next page or None if no more pages."""
+       
+        response = response.json()
+        pagination = response.get('pagination')
+        if pagination.get("hasNextPage") == False:
+            return None
+        else:
+            return pagination.get("nextPageCursor")
+
+    def get_url_params(
+        self, context: Optional[dict], next_page_token: Optional[Any]
+    ) -> Dict[str, Any]:
+        """Return a dictionary of values to be used in URL parameterization."""
+        params: dict = {}
+        if next_page_token:
+            params["cursor"] = next_page_token
+
+        return params
+
+    def prepare_request_payload(
+        self, context: Optional[dict], next_page_token: Optional[Any]
+    ) -> Optional[dict]:
+        """Prepare the data payload for the REST API request.
+
+        By default, no payload will be sent (return None).
+        """
+        # TODO: Delete this method if no payload is required. (Most REST APIs.)
+        return None
+
+    def parse_response(self, response: requests.Response) -> Iterable[dict]:
+        """Parse the response and return an iterator of result rows."""
+        # TODO: Parse response body and return a set of records.
+        yield from extract_jsonpath(self.records_jsonpath, input=response.json())
+
+    def post_process(self, row: dict, context: Optional[dict]) -> dict:
+        """As needed, append or transform raw data to match expected structure."""
+        # TODO: Delete this method if not needed.
+        start_date = self.get_starting_timestamp(context)
+        if self.replication_key:
+            row_date = datetime.strptime(row[self.replication_key], '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=timezone.utc)
+
+            if  start_date <= row_date:
+                return row
+            else:
+                return None
+        else:
+            return row
