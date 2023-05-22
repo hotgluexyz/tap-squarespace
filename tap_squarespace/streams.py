@@ -188,7 +188,7 @@ class OrdersStream(squarespaceStream):
             th.Property("productName", th.StringType),
             th.Property("quantity", th.IntegerType),
             th.Property("unitPricePaid", th.ObjectType(
-                th.Property("value", th.NumberType),
+                th.Property("value", th.StringType),
                 th.Property("currency", th.StringType),
             )),
             th.Property("variantOptions", th.ArrayType(th.ObjectType(
@@ -235,27 +235,27 @@ class OrdersStream(squarespaceStream):
             )
         )),
         th.Property("subtotal", th.ObjectType(
-            th.Property("value", th.NumberType),
+            th.Property("value", th.StringType),
             th.Property("currency", th.StringType)
         )),
         th.Property("shippingTotal", th.ObjectType(
-            th.Property("value", th.NumberType),
+            th.Property("value", th.StringType),
             th.Property("currency", th.StringType)
         )),
         th.Property("discountTotal", th.ObjectType(
-            th.Property("value", th.NumberType),
+            th.Property("value", th.StringType),
             th.Property("currency", th.StringType)
         )),
         th.Property("taxTotal", th.ObjectType(
-            th.Property("value", th.NumberType),
+            th.Property("value", th.StringType),
             th.Property("currency", th.StringType)
         )),
         th.Property("refundedTotal", th.ObjectType(
-            th.Property("value", th.NumberType),
+            th.Property("value", th.StringType),
             th.Property("currency", th.StringType)
         )),
         th.Property("grandTotal", th.ObjectType(
-            th.Property("value", th.NumberType),
+            th.Property("value", th.StringType),
             th.Property("currency", th.StringType)
         )),
         th.Property("channelName", th.StringType),
