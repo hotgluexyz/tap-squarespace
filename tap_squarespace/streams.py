@@ -263,3 +263,101 @@ class OrdersStream(squarespaceStream):
         th.Property("fulfilledOn", th.DateTimeType),
         th.Property("priceTaxInterpretation", th.StringType),
     ).to_dict()
+
+
+class SiteInfoStream(squarespaceStream):
+    """Stream for Squarespace Website Authorization details."""
+    name = "site_info"
+    url_base = "https://api.squarespace.com/1.0"
+    path = "/authorization/website"
+    primary_keys = ["id"]
+    records_jsonpath = "$"
+    replication_key = None  
+
+    schema = th.PropertiesList(
+        th.Property("id", th.StringType),
+        th.Property("siteId", th.StringType),
+        th.Property("title", th.StringType),
+        th.Property("url", th.StringType),
+        th.Property("currency", th.StringType),
+        th.Property("measurementStandard", th.StringType),
+        th.Property("language", th.StringType),
+        th.Property("timeZone", th.StringType),
+        th.Property(
+            "location",
+            th.ObjectType(
+                th.Property("region", th.StringType),
+                th.Property("country", th.StringType),
+            ),
+        ),
+    ).to_dict()
+
+    def get_next_page_token(self, response, previous_token):
+        return None
+    
+class ProfilesStream(squarespaceStream):
+    """Stream for Squarespace Profiles."""
+    name = "profiles"
+    path = "/profiles"
+    url_base = "https://api.squarespace.com/1.0"
+
+    primary_keys = ["id"]
+    records_jsonpath = "$.profiles.[*]"
+    replication_key = None
+
+    schema = th.PropertiesList(
+        th.Property("id", th.StringType),
+        th.Property("firstName", th.StringType),
+        th.Property("lastName", th.StringType),
+        th.Property("email", th.StringType),
+        th.Property("hasAccount", th.BooleanType),
+        th.Property("isCustomer", th.BooleanType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("acceptsMarketing", th.BooleanType),
+        th.Property(
+            "address",
+            th.ObjectType(
+                th.Property("firstName", th.StringType),
+                th.Property("lastName", th.StringType),
+                th.Property("address1", th.StringType),
+                th.Property("address2", th.StringType),
+                th.Property("city", th.StringType),
+                th.Property("state", th.StringType),
+                th.Property("countryCode", th.StringType),
+                th.Property("postalCode", th.StringType),
+                th.Property("phone", th.StringType),
+            ),
+        ),
+        th.Property(
+            "transactionsSummary",
+            th.ObjectType(
+                th.Property("firstOrderSubmittedOn", th.DateTimeType),
+                th.Property("lastOrderSubmittedOn", th.DateTimeType),
+                th.Property("orderCount", th.IntegerType),
+                th.Property(
+                    "totalOrderAmount",
+                    th.ObjectType(
+                        th.Property("value", th.StringType),
+                        th.Property("currency", th.StringType),
+                    ),
+                ),
+                th.Property(
+                    "totalRefundAmount",
+                    th.ObjectType(
+                        th.Property("value", th.StringType),
+                        th.Property("currency", th.StringType),
+                    ),
+                ),
+                th.Property("firstDonationSubmittedOn", th.DateTimeType),
+                th.Property("lastDonationSubmittedOn", th.DateTimeType),
+                th.Property("donationCount", th.IntegerType),
+                th.Property(
+                    "totalDonationAmount",
+                    th.ObjectType(
+                        th.Property("value", th.StringType),
+                        th.Property("currency", th.StringType),
+                    ),
+                ),
+            ),
+        ),
+    ).to_dict()
