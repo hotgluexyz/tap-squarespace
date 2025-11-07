@@ -4,9 +4,12 @@ import requests
 from pathlib import Path
 from typing import Any, Dict, Optional, Union, List, Iterable
 from datetime import datetime,timezone
+from singer_sdk.exceptions import FatalAPIError
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.streams import RESTStream
 from singer_sdk.authenticators import BearerTokenAuthenticator
+
+from tap_squarespace.auth import SquarespaceAuthenticator
 
 
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
@@ -30,10 +33,15 @@ class squarespaceStream(RESTStream):
     @property
     def authenticator(self) -> BearerTokenAuthenticator:
         """Return a new authenticator object."""
-        return BearerTokenAuthenticator.create_for_stream(
-            self,
-            token=self.config.get("api_key")
-        )
+        if self.config.get("refresh_token"):
+            return SquarespaceAuthenticator.create_for_stream(self)
+        elif self.config.get("api_key"):
+            return BearerTokenAuthenticator.create_for_stream(
+                self,
+                token=self.config.get("api_key")
+            )
+        else:
+            raise FatalAPIError("No valid authentication method found")    
 
     @property
     def http_headers(self) -> dict:
