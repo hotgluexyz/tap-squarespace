@@ -26,13 +26,43 @@ class Tapsquarespace(Tap):
     """squarespace tap class."""
     name = "tap-squarespace"
 
+    def __init__(
+        self,
+        config=None,
+        catalog=None,
+        state=None,
+        parse_env_config=False,
+        validate_config=True,
+    ) -> None:
+        self.config_file = config[0]
+        super().__init__(config, catalog, state, parse_env_config, validate_config)
+
     # TODO: Update this section with the actual config values you expect:
     config_jsonschema = th.PropertiesList(
         th.Property(
             "api_key",
             th.StringType,
-            required=True,
             description="The token to authenticate against the API service"
+        ),
+        th.Property(
+            "client_id",
+            th.StringType,
+            description="The client_id to authenticate against the API service"
+        ),
+        th.Property(
+            "client_secret",
+            th.StringType,
+            description="The client_secret to authenticate against the API service"
+        ),
+        th.Property(
+            "access_token",
+            th.StringType,
+            description="The access_token to authenticate against the API service"
+        ),
+        th.Property(
+            "refresh_token",
+            th.StringType,
+            description="The refresh_token to authenticate against the API service"
         ),
         th.Property(
             "start_date",
