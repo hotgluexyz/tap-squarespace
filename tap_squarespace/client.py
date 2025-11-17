@@ -8,6 +8,7 @@ from singer_sdk.exceptions import FatalAPIError
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.streams import RESTStream
 from singer_sdk.authenticators import BearerTokenAuthenticator
+from pendulum import parse
 
 from tap_squarespace.auth import SquarespaceAuthenticator
 
@@ -95,8 +96,7 @@ class squarespaceStream(RESTStream):
         # TODO: Delete this method if not needed.
         start_date = self.get_starting_timestamp(context)
         if self.replication_key:
-            row_date = datetime.strptime(row[self.replication_key], '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=timezone.utc)
-
+            row_date = parse(row[self.replication_key]).replace(tzinfo=timezone.utc)
             if  start_date <= row_date:
                 return row
             else:
