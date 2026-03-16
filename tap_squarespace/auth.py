@@ -47,6 +47,8 @@ class SquarespaceAuthenticator(OAuthAuthenticator, metaclass=SingletonMeta):
         access_token = self._config.get("access_token")
         now = round(datetime.datetime.now(datetime.timezone.utc).timestamp())
         expires_in = self.expires_in or self._config.get("expires_in")
+        if self.last_refreshed is None:
+            return False
         if  expires_in is not None:
             expires_in = int(expires_in)
         if not access_token:
