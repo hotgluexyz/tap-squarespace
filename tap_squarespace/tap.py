@@ -9,16 +9,15 @@ from tap_squarespace.streams import (
     ProductStream,
     OrdersStream,
     SiteInfoStream,
-    ProfilesStream
-
+    ProfilesStream,
+    ContactsStream,
 )
-# TODO: Compile a list of custom stream types here
-#       OR rewrite discover_streams() below with your custom logic.
 STREAM_TYPES = [
     ProductStream,
     OrdersStream,
     SiteInfoStream,
-    ProfilesStream
+    ProfilesStream,
+    ContactsStream,
 ]
 
 
