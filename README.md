@@ -14,26 +14,40 @@ pipx install tap-squarespace
 
 ## Configuration
 
-### Accepted Config Options
+| Name | Required | Description | Example |
+|------|----------|-------------|---------|
+| `api_key` | Required (API key auth) | Personal API key for Bearer token authentication | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| `client_id` | Required (OAuth) | OAuth application client ID | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| `client_secret` | Required (OAuth) | OAuth application client secret | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| `access_token` | Required (OAuth) | OAuth access token | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| `refresh_token` | Required (OAuth) | OAuth refresh token used to obtain new access tokens | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| `start_date` | No | Earliest record date to sync (ISO 8601 format) | `2024-01-01T00:00:00Z` |
 
-- [ ] `Developer TODO:` Provide a list of config options accepted by the tap.
+The tap supports two authentication methods:
 
-A full list of supported settings and capabilities for this
-tap is available by running:
+- **API key**: Provide only `api_key`. Squarespace personal API keys can be generated from your site's Advanced Settings.
+- **OAuth**: Provide `client_id`, `client_secret`, `access_token`, and `refresh_token`. The tap will automatically refresh the access token using the refresh token when it expires.
 
-```bash
-tap-squarespace --about
+### API key auth (simplest)
+
+```json
+{
+  "api_key": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "start_date": "2024-01-01T00:00:00Z"
+}
 ```
 
-### Configure using environment variables
+### OAuth auth
 
-This Singer tap will automatically import any environment variables within the working directory's
-`.env` if the `--config=ENV` is provided, such that config values will be considered if a matching
-environment variable is set either in the terminal context or in the `.env` file.
-
-### Source Authentication and Authorization
-
-- [ ] `Developer TODO:` If your tap requires special access on the source system, or any special authentication requirements, provide those here.
+```json
+{
+  "client_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "client_secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "access_token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "refresh_token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "start_date": "2024-01-01T00:00:00Z"
+}
+```
 
 ## Usage
 

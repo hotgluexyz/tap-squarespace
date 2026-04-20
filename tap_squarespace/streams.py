@@ -265,6 +265,60 @@ class OrdersStream(squarespaceStream):
     ).to_dict()
 
 
+class ContactsStream(squarespaceStream):
+    """Stream for Squarespace Contacts."""
+    name = "contacts"
+    url_base = "https://api.squarespace.com/v1"
+    path = "/contacts"
+    primary_keys = ["id"]
+    records_jsonpath = "$.contacts.[*]"
+    replication_key = None
+
+    schema = th.PropertiesList(
+        th.Property("id", th.StringType),
+        th.Property("createdOn", th.DateTimeType),
+        th.Property("firstName", th.StringType),
+        th.Property("lastName", th.StringType),
+        th.Property("locale", th.StringType),
+        th.Property(
+            "primaryEmail",
+            th.ObjectType(
+                th.Property("createdOn", th.DateTimeType),
+                th.Property("email", th.StringType),
+                th.Property(
+                    "acceptsMarketing",
+                    th.ObjectType(
+                        th.Property("acceptsMarketing", th.BooleanType),
+                        th.Property("joinedOn", th.DateTimeType),
+                        th.Property("leftOn", th.DateTimeType),
+                    ),
+                ),
+            ),
+        ),
+        th.Property(
+            "defaultShippingAddress",
+            th.ObjectType(
+                th.Property("id", th.StringType),
+                th.Property("defaultShipping", th.BooleanType),
+                th.Property(
+                    "address",
+                    th.ObjectType(
+                        th.Property("firstName", th.StringType),
+                        th.Property("lastName", th.StringType),
+                        th.Property("line1", th.StringType),
+                        th.Property("line2", th.StringType),
+                        th.Property("city", th.StringType),
+                        th.Property("region", th.StringType),
+                        th.Property("postalCode", th.StringType),
+                        th.Property("countryCode", th.StringType),
+                        th.Property("phoneNumber", th.StringType),
+                    ),
+                ),
+            ),
+        ),
+    ).to_dict()
+
+
 class SiteInfoStream(squarespaceStream):
     """Stream for Squarespace Website Authorization details."""
     name = "site_info"
