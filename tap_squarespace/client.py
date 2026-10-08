@@ -4,10 +4,10 @@ import requests
 from pathlib import Path
 from typing import Any, Dict, Optional, Union, List, Iterable
 from datetime import datetime,timezone
-from singer_sdk.exceptions import FatalAPIError
-from singer_sdk.helpers.jsonpath import extract_jsonpath
-from singer_sdk.streams import RESTStream
-from singer_sdk.authenticators import BearerTokenAuthenticator
+from hotglue_singer_sdk.helpers.jsonpath import extract_jsonpath
+from hotglue_singer_sdk.streams import RESTStream
+from hotglue_singer_sdk.authenticators import BearerTokenAuthenticator
+from hotglue_singer_sdk.tap_base import InvalidCredentialsError
 from pendulum import parse
 
 from tap_squarespace.auth import SquarespaceAuthenticator
@@ -42,7 +42,7 @@ class squarespaceStream(RESTStream):
                 token=self.config.get("api_key")
             )
         else:
-            raise FatalAPIError("No valid authentication method found")    
+            raise InvalidCredentialsError("No valid authentication method found")
 
     @property
     def http_headers(self) -> dict:

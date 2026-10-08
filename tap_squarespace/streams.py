@@ -3,7 +3,7 @@
 from pathlib import Path
 from typing import Any, Dict, Optional, Union, List, Iterable
 
-from singer_sdk import typing as th  # JSON Schema typing helpers
+from hotglue_singer_sdk import typing as th  # JSON Schema typing helpers
 
 from tap_squarespace.client import squarespaceStream
 
