@@ -2,8 +2,11 @@
 
 from typing import List
 
-from singer_sdk import Tap, Stream
-from singer_sdk import typing as th  # JSON schema typing helpers
+from hotglue_singer_sdk import Tap, Stream
+from hotglue_singer_sdk import typing as th  # JSON schema typing helpers
+from hotglue_singer_sdk.helpers.capabilities import AlertingLevel
+
+from tap_squarespace.auth import SquarespaceAuthenticator, TOKEN_URL
 # TODO: Import your custom stream types here:
 from tap_squarespace.streams import (
     ProductStream,
@@ -24,17 +27,12 @@ STREAM_TYPES = [
 class Tapsquarespace(Tap):
     """squarespace tap class."""
     name = "tap-squarespace"
+    alerting_level = AlertingLevel.ERROR
 
-    def __init__(
-        self,
-        config=None,
-        catalog=None,
-        state=None,
-        parse_env_config=False,
-        validate_config=True,
-    ) -> None:
-        self.config_file = config[0]
-        super().__init__(config, catalog, state, parse_env_config, validate_config)
+    @classmethod
+    def access_token_support(cls, connector=None):
+        """Return authenticator class and auth endpoint for token refresh."""
+        return SquarespaceAuthenticator, TOKEN_URL
 
     # TODO: Update this section with the actual config values you expect:
     config_jsonschema = th.PropertiesList(
