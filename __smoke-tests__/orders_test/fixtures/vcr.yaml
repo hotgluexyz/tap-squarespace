@@ -1,0 +1,152 @@
+interactions:
+- request:
+    body: grant_type=refresh_token
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '142'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.34.2
+    method: POST
+    uri: https://login.squarespace.com/api/1/login/oauth/provider/tokens
+  response:
+    body:
+      string: '{"token": "T1|***", "access_token": "T1|***", "refresh_token": "1|p***",
+        "token_type": "-Fallback-scrubbed-wNEdAa", "expires_in": 1799, "access_token_expires_at":
+        11586966362.2003, "refresh_token_expires_at": 7660402667.18212, "account_id":
+        "-Fallback-scrubbed-NgizaucvklHCcjeHyspmdBXj"}'
+    headers:
+      Age:
+      - '0'
+      Content-Security-Policy:
+      - 'default-src ''none''; script-src https://assets.squarespace.com https://www.google.com
+        https://www.gstatic.com; style-src https://assets.squarespace.com https://www.gstatic.com
+        ''unsafe-inline''; img-src https://assets.squarespace.com data: ''self'' https://images.squarespace-cdn.com
+        https://persistent.oaistatic.com https://static1.squarespace.com https://static3.squarespace.com;
+        media-src https://assets.squarespace.com; base-uri ''none''; form-action squarespace.zendesk.com
+        support.squarespace.com help.acuityscheduling.com forum.squarespace.com forum-staging.squarespace.com
+        forum.acuityscheduling.com forum-staging.acuityscheduling.com; font-src data:;
+        connect-src ''self'' https://assets.squarespace.com https://performance.squarespace.com
+        https://featureassets.org https://prodregistryv2.org https://o109687.ingest.sentry.io
+        https://www.google.com https://www.squarespace.com https://events.squarespace.com
+        https://clanker-events.squarespace.com; report-uri https://o109687.ingest.sentry.io/api/5583338/security/?sentry_key=4dba181ad62646399908cff3c90305be;
+        frame-src https://www.google.com; frame-ancestors ''none'';'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Oct 2026 21:49:33 GMT
+      Server:
+      - Squarespace
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Accept-Encoding,
+        User-Agent
+      X-Contextid:
+      - PFhbMrSN/THQzcKvM
+      X-Frame-Options:
+      - DENY
+      content-length:
+      - '499'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.34.2
+    method: GET
+    uri: https://api.squarespace.com/1.0/commerce/orders
+  response:
+    body:
+      string: '{"result": [{"id": "-Fallback-scrubbed-cTgBrGwfIzpzvZKuBZXyrakh", "orderNumber":
+        "202", "createdOn": "2009-06-22T05:44:52.205Z", "modifiedOn": "2026-09-14T18:51:11.584Z",
+        "channel": "-Fallback-scrubbed-ziFzUtjJ", "testmode": true, "customerEmail":
+        "-Fallback-scrubbed-KnzBaKOFMvyBfGzGmRvEfGaD", "customerId": "-Fallback-scrubbed-waJStxvigfqdkWKjXfgDdkfv",
+        "billingAddress": {"firstName": "Fake-Abigail", "lastName": "Fake-Williams",
+        "address1": "Fake-9078 Eddie Row Apt. 953", "address2": "Fake-9078 Eddie Row
+        Apt. 953", "city": "Fake-Dunnport", "state": "-Fallback-scrubbed-Ky", "countryCode":
+        "-Fallback-scrubbed-IN", "postalCode": "91594", "phone": "555-0141"}, "shippingAddress":
+        {"firstName": "Fake-Abigail", "lastName": "Fake-Williams", "address1": "Fake-9078
+        Eddie Row Apt. 953", "address2": "Fake-9078 Eddie Row Apt. 953", "city": "Fake-Dunnport",
+        "state": "-Fallback-scrubbed-Ky", "countryCode": "-Fallback-scrubbed-IN",
+        "postalCode": "91594", "phone": "555-0141"}, "fulfillmentStatus": "-Fallback-scrubbed-CsAUcGJdc",
+        "lineItems": [{"id": "-Fallback-scrubbed-ajIOYQdqQXNIhRErGJqflIdt", "variantId":
+        null, "sku": null, "weight": -2770356171507.76, "width": -2770356171507.76,
+        "length": -2770356171507.76, "height": -2770356171507.76, "productId": "-Fallback-scrubbed-hFbDMrKfTEumhgkndYyWTeEHgvLYZydRUdSQ",
+        "productName": "-Fallback-scrubbed-cvdMhNiCxUIBUC", "quantity": 1958, "unitPricePaid":
+        {"currency": "-Fallback-scrubbed-Pjt", "value": "-4940176359.64"}, "variantOptions":
+        null, "customizations": null, "imageUrl": null, "lineItemType": "-Fallback-scrubbed-NqBCFp"},
+        {"id": "-Fallback-scrubbed-NpoFMfVVcajoQXYOvBvPtVAB", "variantId": null, "sku":
+        null, "weight": -2770356171507.76, "width": -2770356171507.76, "length": -2770356171507.76,
+        "height": -2770356171507.76, "productId": "-Fallback-scrubbed-IjHkrotvdtOgyBChYInZNvXlwjcVvKAdSvyE",
+        "productName": "-Fallback-scrubbed-plrgTazXOIjkM", "quantity": 9099, "unitPricePaid":
+        {"currency": "-Fallback-scrubbed-Pjt", "value": "-849805.14936031"}, "variantOptions":
+        null, "customizations": null, "imageUrl": null, "lineItemType": "-Fallback-scrubbed-NqBCFp"}],
+        "internalNotes": [], "shippingLines": [{"method": "-Fallback-scrubbed-SaJOBRxlH",
+        "amount": {"currency": "-Fallback-scrubbed-Pjt", "value": "2866965.40311154"}}],
+        "discountLines": [{"name": "Fake-Shawna Holmes", "description": "Fake-Shawna
+        Holmes", "amount": {"currency": "-Fallback-scrubbed-Pjt", "value": "-3386.6366146067"},
+        "promoCode": "-Fallback-scrubbed-PmInqUmzw", "discountType": "-Fallback-scrubbed-yURp"}],
+        "formSubmission": null, "fulfillments": [{"shipDate": "2002-02-02T16:45:54.980Z",
+        "carrierName": "-Fallback-scrubbed-aAhEf", "service": "-Fallback-scrubbed-DzIeGrrgUsVPKoyQM",
+        "trackingNumber": "-Fallback-scrubbed-SFNMkX", "trackingUrl": "-Fallback-scrubbed-CuwRAxVBdqGaFGnoWiadEnIuAyuUDFTaqRy"}],
+        "subtotal": {"currency": "-Fallback-scrubbed-Pjt", "value": "-59.9058733865549"},
+        "shippingTotal": {"currency": "-Fallback-scrubbed-Pjt", "value": "2866965.40311154"},
+        "discountTotal": {"currency": "-Fallback-scrubbed-Pjt", "value": "-3386.6366146067"},
+        "taxTotal": {"currency": "-Fallback-scrubbed-Pjt", "value": "1318.2293212916"},
+        "refundedTotal": {"currency": "-Fallback-scrubbed-Pjt", "value": "-98479661336.604"},
+        "grandTotal": {"currency": "-Fallback-scrubbed-Pjt", "value": "81676235.4987676"},
+        "channelName": "-Fallback-scrubbed-fimMxsulxCAYRgLSlrAGF", "externalOrderReference":
+        "-Fallback-scrubbed-lNIzoJPqpJUK", "fulfilledOn": "2002-02-02T16:45:54.980Z",
+        "priceTaxInterpretation": "-Fallback-scrubbed-vTyCyPrkB", "paymentState":
+        "-Fallback-scrubbed-gCbM", "shippingOptionName": "-Fallback-scrubbed-SaJOBRxlH",
+        "shippingOptionServiceType": "-Fallback-scrubbed-qVFCJ"}], "pagination": {"nextPageUrl":
+        null, "nextPageCursor": null, "hasNextPage": false}}'
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Oct 2026 21:49:33 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Server:
+      - Squarespace
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Contextid:
+      - xE7Ybgva/yHavfkj1
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - '0'
+      content-length:
+      - '3630'
+    status:
+      code: 200
+      message: OK
+version: 1

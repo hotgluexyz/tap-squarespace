@@ -1,0 +1,344 @@
+interactions:
+- request:
+    body: grant_type=refresh_token
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '136'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.34.2
+    method: POST
+    uri: https://login.squarespace.com/api/1/login/oauth/provider/tokens
+  response:
+    body:
+      string: '{"token": "T1|***", "access_token": "T1|***", "refresh_token": "1|E***",
+        "token_type": "-Fallback-scrubbed-ERsiwc", "expires_in": 1799, "access_token_expires_at":
+        102266543.369376, "refresh_token_expires_at": -204.78539634255, "account_id":
+        "-Fallback-scrubbed-wdvtrvwSAqZiUOSEekjEYlaX"}'
+    headers:
+      Age:
+      - '0'
+      Content-Security-Policy:
+      - 'default-src ''none''; script-src https://assets.squarespace.com https://www.google.com
+        https://www.gstatic.com; style-src https://assets.squarespace.com https://www.gstatic.com
+        ''unsafe-inline''; img-src https://assets.squarespace.com data: ''self'' https://images.squarespace-cdn.com
+        https://persistent.oaistatic.com https://static1.squarespace.com https://static3.squarespace.com;
+        media-src https://assets.squarespace.com; base-uri ''none''; form-action squarespace.zendesk.com
+        support.squarespace.com help.acuityscheduling.com forum.squarespace.com forum-staging.squarespace.com
+        forum.acuityscheduling.com forum-staging.acuityscheduling.com; font-src data:;
+        connect-src ''self'' https://assets.squarespace.com https://performance.squarespace.com
+        https://featureassets.org https://prodregistryv2.org https://o109687.ingest.sentry.io
+        https://www.google.com https://www.squarespace.com https://events.squarespace.com
+        https://clanker-events.squarespace.com; report-uri https://o109687.ingest.sentry.io/api/5583338/security/?sentry_key=4dba181ad62646399908cff3c90305be;
+        frame-src https://www.google.com; frame-ancestors ''none'';'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Oct 2026 21:09:31 GMT
+      Server:
+      - Squarespace
+      Vary:
+      - Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Accept-Encoding,
+        User-Agent
+      X-Contextid:
+      - H8I4MNJx/OvlmYA9o
+      X-Frame-Options:
+      - DENY
+      content-length:
+      - '499'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.34.2
+    method: GET
+    uri: https://api.squarespace.com/1.0/profiles
+  response:
+    body:
+      string: '{"profiles": [{"id": "-Fallback-scrubbed-svgOpAWnkxthNZaeBolHHKcz",
+        "firstName": "Fake-Joshua", "lastName": "Fake-Gentry", "email": "fake.qdavies@example.com",
+        "hasAccount": false, "createdOn": "2004-03-08T20:46:22.375Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-uTYBPzEMXzeyZAcuSRjlfHpN", "firstName": "Fake-Joshua",
+        "lastName": "Fake-Reyes", "email": "fake.lawrencekenneth@example.com", "hasAccount":
+        false, "createdOn": "2007-05-20T14:02:49.951Z", "address": null, "acceptsMarketing":
+        false, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-utMruDXAvkcsGEsPdlMjCNQA",
+        "firstName": "Fake-Deborah", "lastName": "Fake-Zimmerman", "email": "fake.devinschmidt@example.com",
+        "hasAccount": false, "createdOn": "1971-10-12T04:04:17.297Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-pqWLtxJDWXBKRyzCYgqotguE", "firstName": "Fake-Mark",
+        "lastName": "Fake-Diaz", "email": "fake.wellsthomas@example.com", "hasAccount":
+        false, "createdOn": "2010-07-23T08:17:47.138Z", "address": null, "acceptsMarketing":
+        false, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-dRFrzIRkJmVRkKgJVZSfTUGH",
+        "firstName": "Fake-Judy", "lastName": "Fake-Edwards", "email": "fake.debbiejones@example.com",
+        "hasAccount": false, "createdOn": "2005-05-22T17:57:06.462Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-izPSKfMbLBvcSvpaWDNFDeUp", "firstName": null, "lastName":
+        null, "email": "fake.nolanemily@example.com", "hasAccount": false, "createdOn":
+        "2000-10-26T19:00:09.662Z", "address": null, "acceptsMarketing": false, "transactionsSummary":
+        {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn": null, "orderCount":
+        1043, "totalOrderAmount": null, "totalRefundAmount": null, "firstDonationSubmittedOn":
+        null, "lastDonationSubmittedOn": null, "donationCount": 1043, "totalDonationAmount":
+        null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-WWvArHmJMTthybwsVoVsOxBU",
+        "firstName": null, "lastName": null, "email": "fake.ayerskevin@example.com",
+        "hasAccount": false, "createdOn": "2004-01-30T02:46:22.329Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-QBPvebvErfsOgZiRFXqPUaeT", "firstName": null, "lastName":
+        null, "email": "fake.william56@example.com", "hasAccount": false, "createdOn":
+        "1974-02-02T01:16:43.980Z", "address": null, "acceptsMarketing": false, "transactionsSummary":
+        {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn": null, "orderCount":
+        1043, "totalOrderAmount": null, "totalRefundAmount": null, "firstDonationSubmittedOn":
+        null, "lastDonationSubmittedOn": null, "donationCount": 1043, "totalDonationAmount":
+        null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-SNtdytfWuNfjlBrDaXWsadxd",
+        "firstName": null, "lastName": null, "email": "fake.patriciacontreras@example.com",
+        "hasAccount": false, "createdOn": "2004-02-03T02:43:46.818Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-kTBxjLsPdGcdpAweBpJvfaxp", "firstName": null, "lastName":
+        null, "email": "fake.mary34@example.com", "hasAccount": false, "createdOn":
+        "2018-12-06T19:02:17.490Z", "address": null, "acceptsMarketing": false, "transactionsSummary":
+        {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn": null, "orderCount":
+        1043, "totalOrderAmount": null, "totalRefundAmount": null, "firstDonationSubmittedOn":
+        null, "lastDonationSubmittedOn": null, "donationCount": 1043, "totalDonationAmount":
+        null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-KXZSvqftBOdDSeDfkQdvAjMd",
+        "firstName": null, "lastName": null, "email": "fake.dtaylor@example.com",
+        "hasAccount": false, "createdOn": "2011-02-04T17:46:08.162Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-VxlVDKStmSgjZPmwTqkbriHR", "firstName": null, "lastName":
+        null, "email": "fake.ericpope@example.com", "hasAccount": false, "createdOn":
+        "1981-09-04T17:28:56.833Z", "address": null, "acceptsMarketing": false, "transactionsSummary":
+        {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn": null, "orderCount":
+        1043, "totalOrderAmount": null, "totalRefundAmount": null, "firstDonationSubmittedOn":
+        null, "lastDonationSubmittedOn": null, "donationCount": 1043, "totalDonationAmount":
+        null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-sCZypTeIENfJGgPPzrywXhnA",
+        "firstName": null, "lastName": null, "email": "fake.sheilahall@example.com",
+        "hasAccount": false, "createdOn": "1998-03-19T11:34:15.651Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-qdVeVWVtblXqTfFRCiVwIwbX", "firstName": null, "lastName":
+        null, "email": "fake.welchchristopher@example.com", "hasAccount": false, "createdOn":
+        "1992-06-03T11:26:54.996Z", "address": null, "acceptsMarketing": false, "transactionsSummary":
+        {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn": null, "orderCount":
+        1043, "totalOrderAmount": null, "totalRefundAmount": null, "firstDonationSubmittedOn":
+        null, "lastDonationSubmittedOn": null, "donationCount": 1043, "totalDonationAmount":
+        null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-YYYOUzBJfuMukkmBGsIPwnIn",
+        "firstName": null, "lastName": null, "email": "fake.harrissheila@example.com",
+        "hasAccount": false, "createdOn": "1987-07-26T01:29:02.430Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-XwpSyBztTnwjpTAUgmfFugFP", "firstName": null, "lastName":
+        null, "email": "fake.vnichols@example.com", "hasAccount": false, "createdOn":
+        "2005-08-04T10:23:46.172Z", "address": null, "acceptsMarketing": false, "transactionsSummary":
+        {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn": null, "orderCount":
+        1043, "totalOrderAmount": null, "totalRefundAmount": null, "firstDonationSubmittedOn":
+        null, "lastDonationSubmittedOn": null, "donationCount": 1043, "totalDonationAmount":
+        null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-HFnwAihobXyrxEjIAegVUoAq",
+        "firstName": "Fake-Brent", "lastName": "Fake-Roach", "email": "fake.jennifer56@example.com",
+        "hasAccount": false, "createdOn": "1973-08-03T10:58:51.946Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-NWSRJTKwftvgMGoOcIkcNcij", "firstName": "Fake-John",
+        "lastName": "Fake-Allen", "email": "fake.billyanderson@example.com", "hasAccount":
+        false, "createdOn": "1988-12-05T15:18:50.539Z", "address": null, "acceptsMarketing":
+        false, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-zANDtdFUGruEfBEXbltMKIzY",
+        "firstName": "Fake-Carrie", "lastName": "Fake-Massey", "email": "fake.laurapeterson@example.com",
+        "hasAccount": false, "createdOn": "1980-08-04T09:14:35.362Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-cVxSznvxyyXaGyBrtCieJNci", "firstName": "Fake-Carrie",
+        "lastName": "Fake-Carrillo", "email": "fake.michele64@example.com", "hasAccount":
+        false, "createdOn": "2003-12-16T03:56:22.197Z", "address": null, "acceptsMarketing":
+        false, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-cdCGoXPqotJtNLVtjFarxvMn",
+        "firstName": "Fake-Sheri", "lastName": "Fake-Powell", "email": "fake.dixonmichael@example.com",
+        "hasAccount": false, "createdOn": "2020-09-20T15:07:16.733Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-XkIEsrtZPMXKKUKfiaanBhkp", "firstName": "Fake-Carrie",
+        "lastName": null, "email": "fake.troyrios@example.com", "hasAccount": false,
+        "createdOn": "1986-07-18T13:48:49.019Z", "address": null, "acceptsMarketing":
+        false, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-rXnQFNhXVYqbgkNrVIaWVupr",
+        "firstName": "Fake-Kristen", "lastName": "Fake-Barnett", "email": "fake.jesussanchez@example.com",
+        "hasAccount": false, "createdOn": "1991-08-16T22:28:25.333Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-wRUtqPpzLFRyVvfQBSPreBLD", "firstName": "Fake-John",
+        "lastName": "Fake-Torres", "email": "fake.davisjohn@example.com", "hasAccount":
+        false, "createdOn": "2004-10-24T06:24:38.840Z", "address": null, "acceptsMarketing":
+        false, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-gLMlHpmZIcNcvcUBkYtOkiIy",
+        "firstName": "Fake-Wyatt", "lastName": "Fake-Vasquez", "email": "fake.monique98@example.com",
+        "hasAccount": false, "createdOn": "2012-01-10T11:19:06.675Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-SvNzwpZlaNPRQgUNKpLqCBmT", "firstName": "Fake-Joshua",
+        "lastName": "Fake-Smith", "email": "fake.monique15@example.com", "hasAccount":
+        false, "createdOn": "1995-05-15T05:16:24.512Z", "address": null, "acceptsMarketing":
+        false, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-GIduSmIbdKrNEgrJRDzFBNOF",
+        "firstName": "Fake-William", "lastName": "Fake-Martin", "email": "fake.cuevaskristine@example.com",
+        "hasAccount": false, "createdOn": "2017-02-17T14:03:08.995Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-KkAkDEvHWkNovCyQHHYDQPEY", "firstName": "Fake-Laura",
+        "lastName": "Fake-Smith", "email": "fake.woodcarol@example.com", "hasAccount":
+        false, "createdOn": "1975-01-19T15:24:52.591Z", "address": null, "acceptsMarketing":
+        false, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-KZxYzGKGUhwqJUSHzgqYxXui",
+        "firstName": "Fake-Rebecca", "lastName": "Fake-Tucker", "email": "fake.salazarjeffrey@example.com",
+        "hasAccount": false, "createdOn": "2016-07-29T05:32:40.485Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-MFYnmbYKdcYiZqrxahIWxFOi", "firstName": "Fake-Tiffany",
+        "lastName": "Fake-Campbell", "email": "fake.mferguson@example.com", "hasAccount":
+        false, "createdOn": "2012-08-10T21:54:54.929Z", "address": null, "acceptsMarketing":
+        true, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-RMlmVHjXWnGxJNkjsirQNfuf",
+        "firstName": "Fake-Wendy", "lastName": "Fake-Rodriguez", "email": "fake.sharonmcdonald@example.com",
+        "hasAccount": false, "createdOn": "1978-02-09T08:34:58.540Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-oicEvpErQsvWsBbrpcrFZrDg", "firstName": "Fake-Francis",
+        "lastName": "Fake-Walters", "email": "fake.pauldavis@example.com", "hasAccount":
+        false, "createdOn": "2000-04-18T05:22:51.160Z", "address": null, "acceptsMarketing":
+        true, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-WxhrdgaqeQuBKVHxsbsBAqRt",
+        "firstName": "Fake-Tracy", "lastName": "Fake-Oconnell", "email": "fake.kaylasalazar@example.com",
+        "hasAccount": false, "createdOn": "1994-04-06T15:49:42.382Z", "address": null,
+        "acceptsMarketing": false, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-TSzJOvkOdridgycDcilCmlzq", "firstName": "Fake-Sydney",
+        "lastName": "Fake-Avila", "email": "fake.petermcdonald@example.com", "hasAccount":
+        false, "createdOn": "1990-05-12T10:51:11.037Z", "address": null, "acceptsMarketing":
+        true, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}, {"id": "-Fallback-scrubbed-LNddTYBbtPYyMKTzIrFThQeG",
+        "firstName": "Fake-Kenneth", "lastName": "Fake-Lopez", "email": "fake.jon63@example.com",
+        "hasAccount": false, "createdOn": "1983-07-05T05:41:41.744Z", "address": null,
+        "acceptsMarketing": true, "transactionsSummary": {"firstOrderSubmittedOn":
+        null, "lastOrderSubmittedOn": null, "orderCount": 1043, "totalOrderAmount":
+        null, "totalRefundAmount": null, "firstDonationSubmittedOn": null, "lastDonationSubmittedOn":
+        null, "donationCount": 1043, "totalDonationAmount": null}, "isCustomer": false},
+        {"id": "-Fallback-scrubbed-KoYexQngihpgLmtocRxgxGWb", "firstName": "Fake-Tamara",
+        "lastName": "Fake-Jackson", "email": "fake.kathryn74@example.com", "hasAccount":
+        false, "createdOn": "1992-06-04T09:17:15.495Z", "address": null, "acceptsMarketing":
+        true, "transactionsSummary": {"firstOrderSubmittedOn": null, "lastOrderSubmittedOn":
+        null, "orderCount": 1043, "totalOrderAmount": null, "totalRefundAmount": null,
+        "firstDonationSubmittedOn": null, "lastDonationSubmittedOn": null, "donationCount":
+        1043, "totalDonationAmount": null}, "isCustomer": false}], "pagination": {"nextPageUrl":
+        null, "nextPageCursor": null, "hasNextPage": false}}'
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Oct 2026 21:09:32 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Server:
+      - Squarespace
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Contextid:
+      - qBtxyuOp/DNc9xOCb
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - '0'
+      content-length:
+      - '23075'
+    status:
+      code: 200
+      message: OK
+version: 1
