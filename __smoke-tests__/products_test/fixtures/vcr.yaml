@@ -1,0 +1,182 @@
+interactions:
+- request:
+    body: grant_type=refresh_token
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '148'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.34.2
+    method: POST
+    uri: https://login.squarespace.com/api/1/login/oauth/provider/tokens
+  response:
+    body:
+      string: '{"token": "T1|***", "access_token": "T1|***", "refresh_token": "1|r***",
+        "token_type": "-Fallback-scrubbed-spSKzf", "expires_in": 1799, "access_token_expires_at":
+        82910868110.582, "refresh_token_expires_at": -466838113.690646, "account_id":
+        "-Fallback-scrubbed-sKWtJCFYxNIbKQBVhFZOVlEo"}'
+    headers:
+      Age:
+      - '0'
+      Content-Security-Policy:
+      - 'default-src ''none''; script-src https://assets.squarespace.com https://www.google.com
+        https://www.gstatic.com; style-src https://assets.squarespace.com https://www.gstatic.com
+        ''unsafe-inline''; img-src https://assets.squarespace.com data: ''self'' https://images.squarespace-cdn.com
+        https://persistent.oaistatic.com https://static1.squarespace.com https://static3.squarespace.com;
+        media-src https://assets.squarespace.com; base-uri ''none''; form-action squarespace.zendesk.com
+        support.squarespace.com help.acuityscheduling.com forum.squarespace.com forum-staging.squarespace.com
+        forum.acuityscheduling.com forum-staging.acuityscheduling.com; font-src data:;
+        connect-src ''self'' https://assets.squarespace.com https://performance.squarespace.com
+        https://featureassets.org https://prodregistryv2.org https://o109687.ingest.sentry.io
+        https://www.google.com https://www.squarespace.com https://events.squarespace.com
+        https://clanker-events.squarespace.com; report-uri https://o109687.ingest.sentry.io/api/5583338/security/?sentry_key=4dba181ad62646399908cff3c90305be;
+        frame-src https://www.google.com; frame-ancestors ''none'';'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Oct 2026 21:09:28 GMT
+      Server:
+      - Squarespace
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Accept-Encoding,
+        User-Agent
+      X-Contextid:
+      - VP2umrat/rnR7Rb0I
+      X-Frame-Options:
+      - DENY
+      content-length:
+      - '499'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.34.2
+    method: GET
+    uri: https://api.squarespace.com/1.0/commerce/products
+  response:
+    body:
+      string: '{"products": [{"id": "-Fallback-scrubbed-JrPWkUcxnhDDqxOzBsbmQEdB",
+        "type": "-Fallback-scrubbed-NtdlUeFX", "storePageId": "-Fallback-scrubbed-KtFbDgqvQILeQrKZaIHNWvKI",
+        "name": "Fake-Janet Pugh", "description": "-Fallback-scrubbed-vMborHtgJADvXYqryhDdAjTlDRCeMUCrgmSwTKLePOJEVwabUtPHUWVXXFFvynmgkbvRbmwgHlraFkkwVVicgOqXYozzYDIHtSOMtEkCJlUlJKzAqXhadJiYlPCcwCC",
+        "url": "-Fallback-scrubbed-mBOrAYVOdIVYFGqGeZhiYILwOkdZqgtckqcRKqshYynBPztCShZIXrrDazGPrBpmzDPn",
+        "urlSlug": "-Fallback-scrubbed-qTJxfczSNwhlvVMnCJsvQ", "images": [{"id": "-Fallback-scrubbed-eUomUUhstAYmmSYPyUPaJKSm",
+        "altText": "-Fallback-scrubbed-cUxydjqBczpduTdpYHzdYlFR", "orderIndex": 1682,
+        "url": "-Fallback-scrubbed-DtZLlzQLAWgjJKtDPUSLyJRjptIZysHKsApAyLMEXKJvnPAPySePHDbcBjBEdsFuJcJCmCKfvuumlegxrTUEeZIXltEHhBfSQfIiHdoZARdrEURxhEEAdGGTVUalAICElVFj",
+        "originalSize": {"width": 4151, "height": 4151}, "availableFormats": []}],
+        "tags": [], "isVisible": false, "variantAttributes": ["-Fallback-scrubbed-uGsw"],
+        "variants": [{"id": "-Fallback-scrubbed-RrhhLqtQWKqZhNBgamiFjswLLxgIFSteIewG",
+        "sku": "-Fallback-scrubbed-OWfoBMUcK", "pricing": {"basePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "81.1686182900862"}, "salePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "2648317660421.12"}, "onSale": true}, "stock":
+        {"quantity": 1682, "unlimited": false}, "attributes": {"Size": "-Fallback-scrubbed-uUwTO"},
+        "shippingMeasurements": {"weight": {"unit": "-Fallback-scrubbed-HdNLf", "value":
+        -4442910747.8585}, "dimensions": {"unit": "-Fallback-scrubbed-heQv", "length":
+        -4442910747.8585, "width": -4442910747.8585, "height": -4442910747.8585}},
+        "image": null}, {"id": "-Fallback-scrubbed-QCYeuietkyzRXBqtPeObdFtxSMuRDBGKpZIN",
+        "sku": "-Fallback-scrubbed-OOYaeEWey", "pricing": {"basePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "81.1686182900862"}, "salePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "2648317660421.12"}, "onSale": true}, "stock":
+        {"quantity": 1682, "unlimited": false}, "attributes": {"Size": "-Fallback-scrubbed-AayMdg"},
+        "shippingMeasurements": {"weight": {"unit": "-Fallback-scrubbed-HdNLf", "value":
+        -4442910747.8585}, "dimensions": {"unit": "-Fallback-scrubbed-heQv", "length":
+        -4442910747.8585, "width": -4442910747.8585, "height": -4442910747.8585}},
+        "image": null}, {"id": "-Fallback-scrubbed-SMFQwRawqOUOXRDEXjlGEMqBVncnwTKoqmHQ",
+        "sku": "-Fallback-scrubbed-cMGcJrSNy", "pricing": {"basePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "81.1686182900862"}, "salePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "2648317660421.12"}, "onSale": true}, "stock":
+        {"quantity": 1682, "unlimited": false}, "attributes": {"Size": "-Fallback-scrubbed-ClcVB"},
+        "shippingMeasurements": {"weight": {"unit": "-Fallback-scrubbed-HdNLf", "value":
+        -4442910747.8585}, "dimensions": {"unit": "-Fallback-scrubbed-heQv", "length":
+        -4442910747.8585, "width": -4442910747.8585, "height": -4442910747.8585}},
+        "image": null}], "seoOptions": null, "createdOn": "1972-10-07T10:44:24.436Z",
+        "modifiedOn": "2026-10-09T23:55:36.979Z", "pricing": null, "digitalGood":
+        null}, {"id": "-Fallback-scrubbed-RKIZOqpsgAFFTtTHqqRnGXDh", "type": "-Fallback-scrubbed-NtdlUeFX",
+        "storePageId": "-Fallback-scrubbed-KtFbDgqvQILeQrKZaIHNWvKI", "name": "Fake-Charles
+        Rodgers", "description": "-Fallback-scrubbed-fbvqFZUTZGrQHUDgRJsbkXnZPUWlrxldBBcvAZWdiWmRNeoVbAVWXPBRaJovuibSfmdfwcOSEfysVxFCryGmugHqvNiejhIGujOgcoisFks",
+        "url": "-Fallback-scrubbed-sUQxHcVPGpDKLNMtCkmNCPxnxCjcooQuaNXjEHXDSqiWvyjtUOcpmNDXSNMwmuE",
+        "urlSlug": "-Fallback-scrubbed-cIAfqOQrYbPzMagq", "images": [{"id": "-Fallback-scrubbed-DgvTgIwJYHBhCsqPIqkKLixv",
+        "altText": "-Fallback-scrubbed-PcTMYlLbSdwZwNMgTSI", "orderIndex": 1682, "url":
+        "-Fallback-scrubbed-ayQuySemWGhtYTGZOWdCYAImbwltUcUhTbxjaSmKLhbwZCVfdiiLUDSBpgzhiLdPvwCPfeNcVJwoPisNecqyZFUzJHkTmsZHsqwZmDjiteTsLeMrDYZQopOyDRXJatz",
+        "originalSize": {"width": 4151, "height": 4151}, "availableFormats": []}],
+        "tags": [], "isVisible": false, "variantAttributes": ["-Fallback-scrubbed-uGsw"],
+        "variants": [{"id": "-Fallback-scrubbed-AGtxaGFjQBltAJMCBclkWrrJNhczLrTssoTC",
+        "sku": "-Fallback-scrubbed-OcFzGkCVA", "pricing": {"basePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "-4138603783557.87"}, "salePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "2648317660421.12"}, "onSale": true}, "stock":
+        {"quantity": 1682, "unlimited": false}, "attributes": {"Size": "-Fallback-scrubbed-uUwTO"},
+        "shippingMeasurements": {"weight": {"unit": "-Fallback-scrubbed-HdNLf", "value":
+        -4442910747.8585}, "dimensions": {"unit": "-Fallback-scrubbed-heQv", "length":
+        -4442910747.8585, "width": -4442910747.8585, "height": -4442910747.8585}},
+        "image": null}, {"id": "-Fallback-scrubbed-ejcrupJIfYIaHKnxpceYWgUlZJTNOwEqhCxl",
+        "sku": "-Fallback-scrubbed-xqrgCupWB", "pricing": {"basePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "-4138603783557.87"}, "salePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "2648317660421.12"}, "onSale": true}, "stock":
+        {"quantity": 1682, "unlimited": false}, "attributes": {"Size": "-Fallback-scrubbed-AayMdg"},
+        "shippingMeasurements": {"weight": {"unit": "-Fallback-scrubbed-HdNLf", "value":
+        -4442910747.8585}, "dimensions": {"unit": "-Fallback-scrubbed-heQv", "length":
+        -4442910747.8585, "width": -4442910747.8585, "height": -4442910747.8585}},
+        "image": null}, {"id": "-Fallback-scrubbed-BvVhWgLoYOhICPxLjqmMxVyqyQSXYVKBCCKY",
+        "sku": "-Fallback-scrubbed-uQqdTYrNj", "pricing": {"basePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "-4138603783557.87"}, "salePrice": {"currency":
+        "-Fallback-scrubbed-jVs", "value": "2648317660421.12"}, "onSale": true}, "stock":
+        {"quantity": 1682, "unlimited": false}, "attributes": {"Size": "-Fallback-scrubbed-ClcVB"},
+        "shippingMeasurements": {"weight": {"unit": "-Fallback-scrubbed-HdNLf", "value":
+        -4442910747.8585}, "dimensions": {"unit": "-Fallback-scrubbed-heQv", "length":
+        -4442910747.8585, "width": -4442910747.8585, "height": -4442910747.8585}},
+        "image": null}], "seoOptions": null, "createdOn": "2015-09-20T02:39:59.937Z",
+        "modifiedOn": "2026-10-09T23:55:34.714Z", "pricing": null, "digitalGood":
+        null}], "pagination": {"nextPageUrl": null, "nextPageCursor": null, "hasNextPage":
+        false}}'
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Oct 2026 21:09:28 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Server:
+      - Squarespace
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Contextid:
+      - Qmv1vQdh/7Aou30NF
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - '0'
+      content-length:
+      - '6777'
+    status:
+      code: 200
+      message: OK
+version: 1
