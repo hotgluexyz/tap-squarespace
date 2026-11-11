@@ -3,8 +3,8 @@
 import datetime
 
 import pytest
-from hotglue_etl_exceptions import InvalidPayloadError
 from hotglue_singer_sdk.exceptions import FatalAPIError
+from hotglue_singer_sdk.tap_base import InvalidCredentialsError
 from hotglue_singer_sdk.testing import get_standard_tap_tests
 from requests import Response
 
@@ -37,12 +37,12 @@ def _response(status_code: int, reason: str) -> Response:
     return response
 
 
-def test_orders_payment_required_is_invalid_payload():
-    """A commerce-orders payment requirement is a configuration error."""
+def test_orders_payment_required_is_invalid_credentials():
+    """A commerce-orders payment requirement is a credentials error."""
     stream = object.__new__(OrdersStream)
 
     with pytest.raises(
-        InvalidPayloadError,
+        InvalidCredentialsError,
         match="402 Client Error: Payment Required for path: /1.0/commerce/orders",
     ):
         stream.validate_response(_response(402, "Payment Required"))

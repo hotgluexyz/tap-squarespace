@@ -3,8 +3,8 @@
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Union
 
-from hotglue_etl_exceptions import InvalidPayloadError  # type: ignore
 from hotglue_singer_sdk import typing as th  # JSON Schema typing helpers
+from hotglue_singer_sdk.tap_base import InvalidCredentialsError
 
 from tap_squarespace.client import squarespaceStream
 
@@ -148,9 +148,9 @@ class OrdersStream(squarespaceStream):
     replication_key = "modifiedOn"
 
     def validate_response(self, response):
-        """Classify unavailable commerce orders as an invalid payload."""
+        """Classify unavailable commerce orders as invalid credentials."""
         if response.status_code == 402:
-            raise InvalidPayloadError(self.response_error_message(response))
+            raise InvalidCredentialsError(self.response_error_message(response))
         super().validate_response(response)
 
     schema = th.PropertiesList(
