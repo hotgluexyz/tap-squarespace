@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Dict, Optional, Union, List, Iterable
 
 from hotglue_singer_sdk import typing as th  # JSON Schema typing helpers
+from hotglue_singer_sdk.tap_base import InvalidCredentialsError
 
 from tap_squarespace.client import squarespaceStream
 
@@ -145,6 +146,13 @@ class OrdersStream(squarespaceStream):
     primary_keys = ["id"]
     records_jsonpath = "$.result.[*]"
     replication_key = "modifiedOn"
+
+    def validate_response(self, response):
+        """Classify unavailable commerce orders as invalid credentials."""
+        if response.status_code == 402:
+            raise InvalidCredentialsError(self.response_error_message(response))
+        super().validate_response(response)
+
     schema = th.PropertiesList(
         th.Property("id", th.StringType),
         th.Property("orderNumber", th.StringType),

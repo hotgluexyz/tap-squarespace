@@ -2,8 +2,13 @@
 
 import datetime
 
+import pytest
+from hotglue_singer_sdk.exceptions import FatalAPIError
+from hotglue_singer_sdk.tap_base import InvalidCredentialsError
 from hotglue_singer_sdk.testing import get_standard_tap_tests
+from requests import Response
 
+from tap_squarespace.streams import OrdersStream
 from tap_squarespace.tap import Tapsquarespace
 
 SAMPLE_CONFIG = {
@@ -23,4 +28,36 @@ def test_standard_tap_tests():
         test()
 
 
-# TODO: Create additional tests as appropriate for your tap.
+def _response(status_code: int, reason: str) -> Response:
+    """Build an API response with the requested status."""
+    response = Response()
+    response.status_code = status_code
+    response.reason = reason
+    response.url = "https://api.squarespace.com/1.0/commerce/orders"
+    return response
+
+
+def test_orders_payment_required_is_invalid_credentials():
+    """A commerce-orders payment requirement is a credentials error."""
+    stream = object.__new__(OrdersStream)
+
+    with pytest.raises(
+        InvalidCredentialsError,
+        match="402 Client Error: Payment Required for path: /1.0/commerce/orders",
+    ):
+        stream.validate_response(_response(402, "Payment Required"))
+
+
+def test_orders_success_response_is_accepted():
+    """Successful commerce-orders responses retain SDK behavior."""
+    stream = object.__new__(OrdersStream)
+
+    assert stream.validate_response(_response(200, "OK")) is None
+
+
+def test_orders_other_client_errors_remain_fatal():
+    """Only payment-required responses change classification."""
+    stream = object.__new__(OrdersStream)
+
+    with pytest.raises(FatalAPIError, match="401 Client Error"):
+        stream.validate_response(_response(401, "Unauthorized"))
