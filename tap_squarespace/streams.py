@@ -1,8 +1,9 @@
 """Stream type classes for tap-squarespace."""
 
 from pathlib import Path
-from typing import Any, Dict, Optional, Union, List, Iterable
+from typing import Any, Dict, Iterable, List, Optional, Union
 
+from hotglue_etl_exceptions import InvalidPayloadError  # type: ignore
 from hotglue_singer_sdk import typing as th  # JSON Schema typing helpers
 
 from tap_squarespace.client import squarespaceStream
@@ -145,6 +146,13 @@ class OrdersStream(squarespaceStream):
     primary_keys = ["id"]
     records_jsonpath = "$.result.[*]"
     replication_key = "modifiedOn"
+
+    def validate_response(self, response):
+        """Classify unavailable commerce orders as an invalid payload."""
+        if response.status_code == 402:
+            raise InvalidPayloadError(self.response_error_message(response))
+        super().validate_response(response)
+
     schema = th.PropertiesList(
         th.Property("id", th.StringType),
         th.Property("orderNumber", th.StringType),
