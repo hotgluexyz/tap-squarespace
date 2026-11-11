@@ -1,7 +1,7 @@
 """Stream type classes for tap-squarespace."""
 
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Union
+from typing import Any, Dict, Optional, Union, List, Iterable
 
 from hotglue_singer_sdk import typing as th  # JSON Schema typing helpers
 from hotglue_singer_sdk.tap_base import InvalidCredentialsError
